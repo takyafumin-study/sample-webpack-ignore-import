@@ -30,9 +30,13 @@ fi
 
 cd ${DIR_APP}
 
-if [ "$1" = "build" ]; then
+if [ "$1" = "dev" ]; then
     rm -rf dist
     npm run build
+
+elif [ "$1" = "prod" ]; then
+    rm -rf dist
+    npm run build:prod
 
 elif [ "$1" = "watch" ]; then
     npm run watch
