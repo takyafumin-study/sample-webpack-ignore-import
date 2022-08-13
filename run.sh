@@ -12,6 +12,7 @@ function display_help {
     echo "  npm-ci      npm install(ci)";
     echo "  exec        exec app.js";
     echo "  clean       cleanup dist directory";
+    echo "  lint        Exec ESLint";
     echo "  help        Display help for a command";
     echo "";
     exit 0;
@@ -38,6 +39,9 @@ elif [ "$1" = "watch" ]; then
 
 elif [ "$1" = "npm-ci" ]; then
     npm ci
+
+elif [ "$1" = "lint" ]; then
+    npm run lint
 
 elif [ "$1" = "exec" ]; then
     node dist/app.js
